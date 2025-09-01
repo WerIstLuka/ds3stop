@@ -1,0 +1,6 @@
+#!/bin/bash
+
+
+echo "stopping and disabling ds3stop.service"
+systemctl stop ds3stop.service
+systemctl disable ds3stop.service
