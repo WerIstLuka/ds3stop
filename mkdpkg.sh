@@ -9,4 +9,5 @@ cp ds3stop.service package/etc/systemd/system
 chmod +x "package/etc/systemd/system/ds3stop.service"
 cp -r DEBIAN package
 dpkg-deb --root-owner-group --build "package"
+mv package.dev ds3stop.deb
 rm -rf package
