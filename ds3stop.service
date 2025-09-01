@@ -1,0 +1,10 @@
+[Unit]
+Description=turn off dualshock 3 when the system shuts down
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStop=/bin/ds3stop
+
+[Install]
+WantedBy=multi-user.target

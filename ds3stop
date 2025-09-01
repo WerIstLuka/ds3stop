@@ -1,0 +1,22 @@
+#!/bin/bash
+
+for file in /sys/bus/usb/drivers/usb/*; do
+	if [ -d $file ]; then
+		if grep -q "PLAYSTATION(R)3 Controller" "$file/product"; then
+		  id=$(basename $file)
+		  break
+		fi
+	fi
+done
+
+if [ "$id" == "" ]; then
+	echo "found nothing"
+	exit
+fi
+
+if [ $(whoami) != "root" ];then
+	echo "you need to be root, please run with sudo"
+	exit
+fi
+
+echo $id > /sys/bus/usb/drivers/usb/unbind

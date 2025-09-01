@@ -1,0 +1,9 @@
+Package: ds3stop
+Version: 1.0
+Architecture: all
+Section: utils
+Essential: no
+Priority: optional
+Depends: bash, systemd
+Maintainer: WerIstLuka
+Description: turn off dualshock 3

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "enabling and starting ds3stop service"
+sudo systemctl daemon-reload
+systemctl start ds3stop.service
+systemctl enable ds3stop.service
